@@ -356,10 +356,47 @@ function CoinSprite() {
     );
     ctx.restore();
     if (this.y + worldY + 20 > player.y && this.collected == false) {
-      console.log("yup");
+      // console.log("yup");
       this.collected = true;
       this.size = 0;
       score++;
+    }
+
+    this.frameCount++;
+    if (this.frameCount >= 3) {
+      if (this.frame > 7) {
+        this.frame = 0;
+      } else {
+        this.frame++;
+      }
+      this.frameCount = 0;
+    }
+  };
+}
+function ColourChange() {
+  this.x = canvas.width / 2;
+  this.y = 0;
+  this.enter = false;
+  this.collected = false;
+  this.radius = 10;
+  this.size = 32;
+  this.frame = 0;
+  this.frameCount = 0;
+  // this.img = new Image();
+  // this.img.src = "coin_gold.png";
+  this.draw = function () {
+    ctx.save();
+    ctx.translate(this.x, this.y + worldY);
+    ctx.fillStyle = "pink";
+    ctx.beginPath();
+    ctx.arc(0, 0, this.radius, 0, Math.PI * 2, false);
+    ctx.fill();
+    ctx.restore();
+    if (this.y + worldY + 10 > player.y && this.collected == false) {
+      // console.log("yup");
+      this.collected = true;
+      this.radius = 0;
+      player.colour = colours[Math.floor(Math.random() * 4)];
     }
 
     this.frameCount++;
@@ -384,6 +421,7 @@ function drawScore() {
 }
 let obstacles = [],
   obstacleCount = 0,
+  colourCount = 0,
   yStrt = 0,
   instruction = new InstructionText();
 
@@ -404,13 +442,20 @@ function addObs() {
       obs = new Circle3();
       break;
   }
+  yStrt -= 300;
   if (obstacleCount > 4) {
     obs = new CoinSprite();
     obstacleCount = 0;
+    yStrt += 290;
+  }
+  if (colourCount > 6) {
+    obs = new ColourChange();
+    colourCount = 0;
+    yStrt += 300;
   }
   obstacles.push(obs);
   obstacleCount++;
-  yStrt -= 300;
+  colourCount++;
   obstacles[obstacles.length - 1].y = yStrt;
 }
 
