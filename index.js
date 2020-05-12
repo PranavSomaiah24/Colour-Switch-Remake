@@ -447,11 +447,11 @@ function addObs() {
     obs = new CoinSprite();
     obstacleCount = 0;
     yStrt += 290;
-  }
-  if (colourCount > 6) {
-    obs = new ColourChange();
+  } else if (colourCount > 6 && randomObs != 3) {
+    changeColour = new ColourChange();
+    obstacles.push(changeColour);
+    obstacles[obstacles.length - 1].y = yStrt;
     colourCount = 0;
-    yStrt += 300;
   }
   obstacles.push(obs);
   obstacleCount++;
