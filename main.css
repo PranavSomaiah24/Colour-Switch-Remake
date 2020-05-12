@@ -1,0 +1,22 @@
+#myCanvas {
+  border: 7px solid rgb(32, 33, 34);
+  background-color: black;
+  position: absolute;
+  left: 30%;
+  z-index: -1;
+}
+#menu {
+  background-color: darkorange;
+  position: absolute;
+  height: 600px;
+  top: 50%;
+  left: 0%;
+  display: none;
+  width: 500px;
+  z-index: 2;
+}
+body {
+  background-color: grey;
+  position: relative;
+  z-index: 1;
+}
