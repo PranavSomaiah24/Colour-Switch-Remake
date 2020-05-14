@@ -2,21 +2,88 @@
   border: 7px solid rgb(32, 33, 34);
   background-color: black;
   position: absolute;
-  left: 30%;
-  z-index: -1;
+  top: 1%;
+  left: 15%;
+  z-index: 0;
+  display: none;
+}
+
+#single {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  padding: 0.5em;
+  width: 20%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: orangered;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+#split {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  padding: 0.5em;
+  width: 20%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: orangered;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+#playBtn {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  padding: 0.5em;
+  width: 10%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: orangered;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+#pauseBtn {
+  position: absolute;
+  top: 55%;
+  left: 5%;
+  padding: 0.5em;
+  width: 10%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: orangered;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+#menuBtn {
+  position: absolute;
+  top: 75%;
+  left: 5%;
+  padding: 0.5em;
+  width: 10%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: orangered;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: none;
 }
 #menu {
-  background-color: darkorange;
-  position: absolute;
+  position: relative;
   height: 600px;
-  top: 50%;
-  left: 0%;
-  display: none;
-  width: 500px;
-  z-index: 2;
 }
 body {
   background-color: grey;
   position: relative;
-  z-index: 1;
+  margin: 0;
+  padding: 0;
+  /* z-index: 1; */
 }
